@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+}
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#canvas1 {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:-1;
+	animation: color 9s infinite linear;
+}
+.container {
+    height: 200px;
+    position: relative;
+    border: 3px solid green;
+  }
+  
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100vw;
+}
+.main {
+    font-size: 40px;
+    color:  white;
+    text-align: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    z-index: 100;
+}
+.heart {
+    background-color: white;
+    position: absolute;
+    height: 30px;
+    margin: 0 10px;
+    transform: rotate(-45deg);
+    width: 30px;
+    top: 70%;
+    left: 48%;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after{
+    left: 15px;
+    top: 0;
+}
+
+.heart {
+    cursor: pointer;
+    animation: pulse 1s ease infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1) rotate(-45deg);
+      }
+    25% {
+        transform: scale(1.7) rotate(-45deg);
+    }
+    50% {
+        transform: scale(2) rotate(-45deg);
+    }
+  }
+
+
+@keyframes color {
+    0%   { background: #cc5e33; }
+    20%  { background: #cca833; }
+    40%  { background: #e43517; }
+    60%  { background: #ff0000; }
+    80%  { background: #cc33a6; }
+    100% { background: #cc5e33; }
+  }
